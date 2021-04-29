@@ -18,5 +18,9 @@ print(iris.data)
 print(iris.feature_names)
 
 # feature_name과 target을 레코드로 갖는 데이터프레임 생성
-df = pd.DataFrame(data=iris.data, columns=iris.feature_name)
+df = pd.DataFrame(data=iris.data, columns=iris.feature_names)
 df['target'] = iris.target
+
+# 숫자로 코딩된 데이터 문자열 매핑
+df['target'] = df['target'].map({0: "setosa", 1: "versicolor", 2: "virginica"})
+print(df)
