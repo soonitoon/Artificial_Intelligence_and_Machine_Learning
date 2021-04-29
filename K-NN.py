@@ -16,3 +16,7 @@ print(iris.DESCR)
 # label
 print(iris.data)
 print(iris.feature_names)
+
+# feature_name과 target을 레코드로 갖는 데이터프레임 생성
+df = pd.DataFrame(data=iris.data, columns=iris.feature_name)
+df['target'] = iris.target
