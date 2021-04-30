@@ -12,3 +12,11 @@ y = iris.target
 plt.scatter(X[:, 0], X[:, 1], c=y, cmap='gist_rainbow')
 plt.xlabel('Speal Length', fontsize=18)
 plt.ylabel('Speal Wength', fontsize=18)
+
+# K-mean 클러스터링
+km = KMeans(n_clusters=3, n_jobs=4, random_state=21)
+km.fit(X)
+
+# 중심점 위치
+centers = km.cluster_centers_
+print(centers)
