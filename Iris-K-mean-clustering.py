@@ -20,3 +20,8 @@ km.fit(X)
 # 중심점 위치
 centers = km.cluster_centers_
 print(centers)
+
+for center in centers:
+    plt.plot(center[0], center[1], 'go')
+
+plt.savefig('output_img/k-mean.png')
