@@ -28,3 +28,12 @@ model.add(Dense(3, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='Adam', metrics=['accuracy'])
 
 hist = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=100)
+
+plt.figure(figsize=(12, 8))
+plt.plot(hist.history['loss'])
+plt.plot(hist.history['val_loss'])
+plt.plot(hist.history['accuracy'])
+plt.plot(hist.history['val_accuracy'])
+plt.legend(['loss', 'val_loss', 'accuracy', 'val_accuracy'])
+plt.grid()
+plt.show()
